@@ -1,0 +1,16 @@
+import random
+
+def Roll():
+    while True:
+        dice_roll = random.randint(1,6)
+
+        roll = str.lower(input("Would you like to roll the dice? (Y/N) "))
+
+        if roll == "y":
+            print(f"The dice rolled a {dice_roll}")
+        elif roll == "n":
+            break
+        else:
+            print("Please input a (Y/N) ") 
+
+Roll()
