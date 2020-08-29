@@ -10,7 +10,7 @@ def Roll():
             print(f"The dice rolled a {dice_roll}")
         elif roll == "n":
             break
-        else:
+        elif roll != "y" or roll != "n":
             print("Please input a (Y/N) ") 
 
 Roll()
