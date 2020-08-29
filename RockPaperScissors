@@ -1,0 +1,45 @@
+import random
+
+play = True
+
+player_score = 0
+opponent_score = 0
+
+def Score():
+    print(f"Player score: {player_score}")
+    print(f"Opponent score: {opponent_score}")
+
+while play:
+    opponent = random.choice(["rock", "paper", "scissors"])
+
+    if (player_score == 3):
+        print("")
+        print("Player got to 3 first. You win the game!")
+        break
+    elif (opponent_score == 3):
+        print("")
+        print("Opponent got to 3 first. You lose!")
+        break
+
+    player = str.lower(input("Let's Play! Choose Rock, Paper or Scissors! "))
+        
+    if player == "rock" or player == "paper" or player == "scissors":
+            # Tie Game
+        if player == opponent:
+            print(f"{player} does not beat {opponent}. Try again. ")
+            Score()
+
+            # PLayer Wins
+        if (player == "rock" and opponent == "scissors") or (player == "paper" and opponent == "rock") or (player == "scissors" and opponent == "paper"):
+            print(f"Player has {player}. Opponent had {opponent}. Player Wins!")
+            player_score += 1
+            Score()
+            
+            # Opponent Wins
+        if (opponent == "rock" and player == "scissors") or (opponent == "paper" and player == "rock") or (opponent == "scissors" and player == "paper"):
+            print(f"Opponent has {opponent}. Player had {player}. Opponent Wins!")
+            opponent_score += 1
+            Score()
+            
+    else:
+        print("Sorry that wasn't Rock, Paper or Scissors. Please try again. ")
